@@ -12532,7 +12532,8 @@ var widgetsDatepicker = $.datepicker;
 
 var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
     className = {
-        open: 'is-open'
+        open: 'is-open',
+        selected: 'is-selected'
     };
 
 $(document).ready(function() {
@@ -12550,39 +12551,19 @@ $(document).ready(function() {
         var daysIn = {
                 year: [],
                 month: []
-            },
-            counter = {
-                year: 0,
-                month: 0,
             };
         for (var i = 0; i < person[p].dates.length; i++) {
             var date = person[p].dates[i].substring(0, 4),
                 year = person[p].dates[i].substring(0, 4),
-                month = person[p].dates[i].substring(0, 6),
-                index = {
-                    year: 0,
-                    month: 0
-                };
+                month = person[p].dates[i].substring(0, 6);
 
-            if (years.indexOf(year) === -1) {
-                counter.year = 1;
-                years.push(year);
-                daysIn.year.push(counter.year);
-            } else {
-                counter.year++;
-                index.year = years.length - 1;
-                daysIn.year.splice(index.year, 1, counter.year);
-            }
+            if (years.indexOf(year) === -1) years.push(year);
+            if (!daysIn.year[year]) daysIn.year[year] = 0;
+            daysIn.year[year] = daysIn.year[year] + 1;
 
-            if (months.indexOf(month) === -1) {
-                counter.month = 1;
-                months.push(month);
-                daysIn.month.push(counter.month);
-            } else {
-                counter.month++;
-                index.month  = months.length - 1;
-                daysIn.month.splice(index.month, 1, counter.month);
-            }
+            if (months.indexOf(month) === -1) months.push(month);
+            if (!daysIn.month[month]) daysIn.month[month] = 0;
+            daysIn.month[month] = daysIn.month[month] + 1;
         }
 
         html +=     '<ol class="list year-list">';
@@ -12591,18 +12572,18 @@ $(document).ready(function() {
                 html +=         '<a href="#">';
                 html +=             '<i class="icon"></i>';
                 html +=             years[y];
-                html +=             '<span class="count">(' + daysIn.year[y] + ')</span>';
+                html +=             '<span class="count">(' + daysIn.year[years[y]] + ')</span>';
                 html +=         '</a>';
                 html +=         '<ol class="list month-list">';
                 for (var m = 0; m < months.length; m++) {
                     var isSameYear = months[m].substring(0, 4) === years[y],
-                        mm = months[m].substring(4, 6);
+                        month = months[m].substring(4, 6);
                     if (isSameYear) {
                         html +=             '<li class="month">';
-                        html +=                 '<a href="#" data-calendar-month="' + years[y] + mm + '01' + '">';
+                        html +=                 '<a href="#" data-calendar-month="' + years[y] + month + '01' + '">';
                         html +=                     '<i class="icon"></i>';
-                        html +=                     monthNames[parseInt((mm-1), 10)];
-                        html +=                     '<span class="count">(' + daysIn.month[m] + ')</span>';
+                        html +=                     monthNames[parseInt((month-1), 10)];
+                        html +=                     '<span class="count">(' + daysIn.month[years[y]+month] + ')</span>';
                         html +=                 '</a>';
                         html +=                 '<div class="datepicker"></div>';
                         html +=             '</li>';
@@ -12668,8 +12649,8 @@ $(document).ready(function() {
                         day = date.substring(6, 8);
                     $(iframe).attr('src', 'contents/' + fileName + '.html');
                     $('.ui-state-active').removeClass('ui-state-active');
-                    $('.is-selected').removeClass('is-selected');
-                    $(this).addClass('is-selected');
+                    $('.' + className.selected).removeClass(className.selected);
+                    $(this).addClass(className.selected);
                     $('#js-name').html(name);
                     $('#js-date').html(day + '-' + month + '-' + year);
                 },
@@ -12685,7 +12666,6 @@ $(document).ready(function() {
         })
     ;
 });
-
 
 
 //# sourceMappingURL=../maps/script.js.map
