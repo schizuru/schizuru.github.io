@@ -4,8 +4,8 @@
   "description": "Static chat archives",
   "main": "gulpfile.js",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/schizuru/chat-archives.git"
+    "type": "git",
+    "url": "https://github.com/schizuru/chat-archives.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
