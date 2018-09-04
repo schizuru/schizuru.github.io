@@ -1,0 +1,115 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: $font-size-base;
+    font-family: $font-family-default;
+    line-height: 1.4;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+a {
+    color: $color-primary;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.material-icons {
+    display: none;
+}
+
+.app {
+    margin: auto;
+    padding: 10px;
+    max-width: 1400px;
+}
+
+.nav {
+    display: block;
+    position: fixed;
+    width: 350px;
+    height: 100%;
+    overflow: auto;
+    padding: 0 10px 20px 0;
+}
+
+.content {
+    margin: 0 0 0 360px;
+    padding-top: 35px;
+}
+
+.iframe-box {
+    border-top: 3px solid #ccc;
+}
+
+.iframe {
+    border: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.action {
+    text-align: right;
+    margin: 0 0 10px;
+}
+
+.icon {
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background: $color-font-default;
+    -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+            mask-size: cover;
+}
+
+.expand {
+    .icon {
+        -webkit-mask-image: url(../img/icons/expand-more.svg);
+                mask-image: url(../img/icons/expand-more.svg);
+    }
+}
+
+.close {
+    .icon {
+        -webkit-mask-image: url(../img/icons/expand-less.svg);
+                mask-image: url(../img/icons/expand-less.svg);
+    }
+}
+
+.button {
+    background: $color-bg-gray-light;
+    color: $color-font-default;
+    padding: 5px 10px;
+    border-radius: 3px;
+    display: inline-block;
+    text-decoration: none;
+
+    .icon {
+        margin-right: -3px;
+    }
+
+    &:hover {
+        background: $color-primary;
+        color: #fff;
+
+        .icon {
+            background: #fff;
+        }
+    }
+}

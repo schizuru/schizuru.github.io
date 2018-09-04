@@ -1,0 +1,130 @@
+.list {
+    display: none;
+
+    a {
+        display: block;
+        color: $color-font-default;
+        background: $color-bg-gray-light;
+
+        &::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        &:hover {
+            background: $color-primary-light;
+            color: #fff;
+
+            .count {
+                color: $color-white-light;
+            }
+
+            .icon {
+                background: #fff;
+            }
+        }
+    }
+
+    .icon {
+        margin: 0 2px 0 -5px;
+        -webkit-mask-image: url(../img/icons/chevron-right.svg);
+                mask-image: url(../img/icons/chevron-right.svg);
+    }
+
+    .is-selected {
+        .ui-state-active {
+            background: $color-primary;
+            border-color: $color-primary;
+            color: #fff;
+        }
+    }
+
+    a.ui-state-default {
+        &:hover {
+            border-color: $color-primary-light;
+        }
+    }
+}
+
+.count {
+    font-family: $font-family-default;
+    font-size: $font-size-small;
+    float: right;
+}
+
+.person-list {
+    display: block;
+
+    .image {
+        width: 50px;
+        height: 50px;
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+
+    .count {
+        margin: 1.4em 10px 0 0;
+    }
+}
+
+.person {
+    margin: 0 0 3px;
+
+    > a {
+        text-decoration: none;
+    }
+}
+
+.year-list {
+    margin: 1px 0 0 50px;
+
+    .count {
+        margin: .4em 0 0;
+    }
+}
+
+.year {
+    a {
+        padding: 5px 10px;
+        margin: 0 0 1px 0;
+        font-family: $font-family-number;
+    }
+}
+
+.month-list {
+    margin-left: 20px;
+}
+
+.datepicker {
+    display: none;
+    margin: 1px 0 10px;
+}
+
+.is-open {
+    > .list,
+    > .datepicker {
+        display: block;
+    }
+
+    &.year,
+    &.month {
+        > a {
+            .icon {
+                background: #fff;
+                -webkit-mask-image: url(../img/icons/expand-more.svg);
+                        mask-image: url(../img/icons/expand-more.svg);
+            }
+        }
+    }
+
+    > a {
+        background: $color-primary;
+        color: #fff;
+        text-decoration: none;
+
+        .count {
+            color: rgba(255, 255, 255, .8);
+        }
+    }
+}

@@ -1,0 +1,114 @@
+.title {
+    padding: 5px 0;
+    margin: 0 0 10px;
+    background: #fff;
+    position: fixed;
+    top: 10px;
+    vertical-align: middle;
+
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    .image {
+        float: right;
+        width: 100px;
+        height: 100px;
+    }
+
+    .icon {
+        -webkit-mask-image: url(../img/icons/message.svg);
+                mask-image: url(../img/icons/message.svg);
+    }
+}
+
+.date {
+    font-family: $font-family-number;
+    display: inline-block;
+}
+
+.discussion {
+    padding: 10px;
+}
+
+.timestamp {
+    font-size: $font-size-small;
+    font-family: $font-family-number;
+    background: url(../img/icons/access-time.svg) no-repeat;
+    background-size: contain;
+    padding-left: 20px;
+    opacity: .7;
+}
+
+.name {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.profile {
+    display: inline-block;
+
+    .image {
+        margin-right: 5px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        vertical-align: bottom;
+    }
+}
+
+.message {
+    border-radius: 3px;
+    background: $color-bg-gray;
+    display: inline-block;
+    padding: 7px 15px 6px;
+    margin: 5px 0 0 30px;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 7px;
+        left: -10px;
+        border-left: 12px solid #0000;
+        border-right: 12px solid #0000;
+        border-top: 8px solid $color-bg-gray;
+        transform: rotate(20deg);
+    }
+}
+
+.timeline {
+    margin-bottom: 15px;
+
+    &.right {
+        text-align: right;
+        padding-top: 20px;
+
+        .profile {
+                float: right;
+            .image {
+                margin: -20px 0 0 5px;
+                float: right;
+            }
+        }
+
+        .message {
+            background: $color-bg-skyblue;
+            color: $color-font-default;
+            margin: 5px 30px 0 0;
+
+            &::before {
+                left: auto;
+                right: -10px;
+                border-top-color: $color-bg-skyblue;
+                transform: rotate(-20deg);
+            }
+        }
+
+        .name {
+            margin: 0 0 0 15px;
+        }
+    }
+}
