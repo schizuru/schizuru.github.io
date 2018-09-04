@@ -1,0 +1,17 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "color-hex-case": ["lower", {
+        "message": "Lowercase letters are easier to distinguish from numbers"
+    }],
+    "declaration-no-important": [true, {
+        "severity": "warning"
+    }],
+    "color-named": never,
+    "color-no-invalid-hex": true,
+    "indentation": 4,
+    "number-leading-zero": ["never", {
+        "message": "Omit the leading zero. Ex: 0.5rem => .5rem"
+    }]
+  }
+}
