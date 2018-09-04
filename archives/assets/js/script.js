@@ -12621,13 +12621,12 @@ $(document).ready(function() {
     $('#js-expand-all').on('click', function() {
         $('.person').addClass(className.open);
         $('.year').addClass(className.open);
-        $('.month > a').click();
     });
 
     $('.nav')
         .on('click', 'a', function(event) {
             event.preventDefault();
-            $(this).closest('li').toggleClass(className.open);
+            $(this).closest('li').toggleClass(className.open).siblings().removeClass(className.open);
         })
         .on('click', '.month > a', function(event) {
             event.preventDefault();

@@ -1,5 +1,13 @@
 var person = [
     {
+        name: 'Cat',
+        id: 'cat',
+        imagePath: 'assets/img/cat.png',
+        dates: [
+            '20180303'
+        ]
+    },
+    {
         name: 'Jane Villanueva',
         id: 'Jane',
         imagePath: 'assets/img/p-1.jpg',
