@@ -37,5 +37,12 @@
     "stylelint": "^9.4.0",
     "stylelint-config-recommended": "^2.1.0",
     "stylelint-config-standard": "^18.2.0"
+  },
+  "dependencies": {
+    "boom": "^7.2.0",
+    "hawk": "^7.0.7",
+    "pangyp": "^2.3.3",
+    "request": "^2.88.0",
+    "sntp": "^3.0.1"
   }
 }
