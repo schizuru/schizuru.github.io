@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "growl": "^1.10.5",
-    "hawk": "^7.0.7",
+    "hawk": "^9.0.1",
     "hoek": "^5.0.4",
     "lodash": "^4.17.10",
     "node-sass": "^4.9.3"
